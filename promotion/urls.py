@@ -7,7 +7,8 @@ from promotion import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rest-auth/', include('rest_auth.urls')),
-    url(r'^rest-auth/registration/', include('rest_auth.registration.urls'))
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^api/', include('main.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
