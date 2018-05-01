@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'allauth',
     'allauth.account',
+    'main'
 
 ]
 
@@ -117,6 +118,8 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "promotion", "static", "st
 STATICFILES_DIRS = (
     os.path.join(os.path.dirname(BASE_DIR), "promotion", "templates", "assets", "static_files"),
 )
+
+AUTH_USER_MODEL = 'main.User'
 
 SITE_ID = 1
 
