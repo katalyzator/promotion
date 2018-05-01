@@ -35,11 +35,13 @@ class Company(models.Model):
 
 class User(AbstractUser):
     email = models.EmailField(verbose_name='Email', unique=True)
+    image = models.ImageField(upload_to='images/user_images', verbose_name='Аватар', blank=True, null=True)
 
     phone_number = models.CharField(max_length=255, verbose_name='Номер телефона', blank=True, null=True)
 
     company_status = models.BooleanField(default=False, verbose_name='Статус пользователя')
     company = models.ForeignKey(Company, verbose_name='Компания', blank=True, null=True, related_name='user_company')
+
     # REQUIRED_FIELDS = []
     # USERNAME_FIELD = 'username'
 
