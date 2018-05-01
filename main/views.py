@@ -18,5 +18,6 @@ def get_user_detail(request):
         "phone_number": user.phone_number,
         "avatar": (u"{}{}{}".format("http://", request.get_host(), user.image.url)).encode(
             "utf-8") if user.image else None,
+        "company_status": user.company_status
 
     })
